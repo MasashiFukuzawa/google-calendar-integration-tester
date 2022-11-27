@@ -1,5 +1,6 @@
 import puppeteer from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
 import env from "./utils/env.ts";
+import generateUniqueKey from "./utils/generateUniqueKey.ts";
 import loginToGoogleCalendar from "./utils/loginGoogleCalendar.ts";
 
 const GOOGLE_CALENDAR_URL = env["GOOGLE_CALENDAR_URL"] as string;
@@ -11,6 +12,9 @@ const page = await browser.newPage();
 await page.goto(GOOGLE_CALENDAR_URL);
 
 await loginToGoogleCalendar(page);
+
+const uniqueKey = generateUniqueKey();
+console.log(`Unique key is ${uniqueKey}.`);
 
 // TODO: add test cases
 
