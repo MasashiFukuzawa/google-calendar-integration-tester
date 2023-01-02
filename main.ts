@@ -1,21 +1,46 @@
+import { join } from "https://deno.land/std@0.130.0/path/mod.ts";
 import puppeteer from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
+import execOneOffMeetingTestCases from "./test-cases/one-off-meetings/index.ts";
 import env from "./utils/env.ts";
 import generateUniqueKey from "./utils/generateUniqueKey.ts";
 import loginToGoogleCalendar from "./utils/loginGoogleCalendar.ts";
 
+const GOOGLE_CALENDAR_AUTH_URL = env["GOOGLE_CALENDAR_AUTH_URL"] as string;
 const GOOGLE_CALENDAR_URL = env["GOOGLE_CALENDAR_URL"] as string;
+const GOOGLE_CHROME_EXTENSION_BASE_PATH = env[
+  "GOOGLE_CHROME_EXTENSION_BASE_PATH"
+] as string;
+const ZOOM_SCHEDULER_ID = "kgjfgplpablkjnlkjmjdecgdpfankdle";
+const ZOOM_SCHEDULER_VERSION = env["ZOOM_SCHEDULER_VERSION"] as string;
 
-// TODO: use chrome extension
-// ref. https://pptr.dev/guides/chrome-extensions/
-const browser = await puppeteer.launch({ headless: false });
+const pathToExtension = join(
+  GOOGLE_CHROME_EXTENSION_BASE_PATH,
+  ZOOM_SCHEDULER_ID,
+  ZOOM_SCHEDULER_VERSION
+);
+const browser = await puppeteer.launch({
+  headless: false,
+  args: [
+    "--start-maximized",
+    `--disable-extensions-except=${pathToExtension}`,
+    `--load-extension=${pathToExtension}`,
+  ],
+});
+
 const page = await browser.newPage();
-await page.goto(GOOGLE_CALENDAR_URL);
+await page.setViewport({ width: 0, height: 0 });
+await page.goto(GOOGLE_CALENDAR_AUTH_URL);
 
 await loginToGoogleCalendar(page);
+
+await Promise.all([page.waitForNavigation(), page.goto(GOOGLE_CALENDAR_URL)]);
+
+const today = new Date().toLocaleDateString();
 
 const uniqueKey = generateUniqueKey();
 console.log(`Unique key is ${uniqueKey}.`);
 
-// TODO: add test cases
+await execOneOffMeetingTestCases(page, uniqueKey, today);
+// await execRecurringMeetingTestCases(page, uniqueKey);
 
 await browser.close();
