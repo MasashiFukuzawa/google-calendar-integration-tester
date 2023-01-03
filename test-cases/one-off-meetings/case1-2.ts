@@ -3,7 +3,7 @@ import env from "../../utils/env.ts";
 import waitFor from "../../utils/waitFor.ts";
 import createZoomMeetingUsingChromeExtension from "../modules/createZoomMeetingUsingChromeExtension.ts";
 import { CaseResult } from "../schemata.ts";
-import creationWorkflow from "./creation-workflow.ts";
+import creationOneOffMeetingWorkflow from "./creationWorkflow.ts";
 
 const testCreateZoomMeetingUsingChromeExtension = async (
   page: Page,
@@ -14,7 +14,7 @@ const testCreateZoomMeetingUsingChromeExtension = async (
 
   const meetingTitle = `${uniqueKey}_test-case-1-2`;
 
-  await creationWorkflow(
+  await creationOneOffMeetingWorkflow(
     page,
     meetingTitle,
     createZoomMeetingUsingChromeExtension

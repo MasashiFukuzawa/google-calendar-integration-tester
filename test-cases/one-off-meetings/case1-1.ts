@@ -3,7 +3,7 @@ import env from "../../utils/env.ts";
 import waitFor from "../../utils/waitFor.ts";
 import createZoomMeetingUsingZoomAddon from "../modules/createZoomMeetingUsingZoomAddon.ts";
 import { CaseResult } from "../schemata.ts";
-import creationWorkflow from "./creation-workflow.ts";
+import creationOneOffMeetingWorkflow from "./creationWorkflow.ts";
 
 const testCreateZoomMeetingUsingZoomAddon = async (
   page: Page,
@@ -14,7 +14,11 @@ const testCreateZoomMeetingUsingZoomAddon = async (
 
   const meetingTitle = `${uniqueKey}_test-case-1-1`;
 
-  await creationWorkflow(page, meetingTitle, createZoomMeetingUsingZoomAddon);
+  await creationOneOffMeetingWorkflow(
+    page,
+    meetingTitle,
+    createZoomMeetingUsingZoomAddon
+  );
 
   await waitFor(1000);
 

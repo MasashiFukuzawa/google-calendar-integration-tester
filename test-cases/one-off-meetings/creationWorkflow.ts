@@ -4,7 +4,7 @@ const SCHEDULE_BUTTON = "div.sx5BGe > div > div:nth-child(20)";
 const MEETING_TITLE_INPUT =
   "div.rFrNMe.shdZ7e.Uj1FAb.zKHdkd > div > div > div > input";
 
-const creationWorkflow = async (
+const creationOneOffMeetingWorkflow = async (
   page: Page,
   meetingTitle: string,
   createMeetingFunc: (page: Page) => Promise<void>
@@ -18,4 +18,4 @@ const creationWorkflow = async (
   await createMeetingFunc(page);
 };
 
-export default creationWorkflow;
+export default creationOneOffMeetingWorkflow;
