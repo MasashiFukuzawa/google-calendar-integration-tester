@@ -5,7 +5,6 @@ import env from "./utils/env.ts";
 import generateUniqueKey from "./utils/generateUniqueKey.ts";
 import loginToGoogleCalendar from "./utils/loginGoogleCalendar.ts";
 
-const GOOGLE_CALENDAR_AUTH_URL = env["GOOGLE_CALENDAR_AUTH_URL"] as string;
 const GOOGLE_CALENDAR_URL = env["GOOGLE_CALENDAR_URL"] as string;
 const GOOGLE_CHROME_EXTENSION_BASE_PATH = env[
   "GOOGLE_CHROME_EXTENSION_BASE_PATH"
@@ -29,11 +28,9 @@ const browser = await puppeteer.launch({
 
 const page = await browser.newPage();
 await page.setViewport({ width: 0, height: 0 });
-await page.goto(GOOGLE_CALENDAR_AUTH_URL);
+await page.goto(GOOGLE_CALENDAR_URL);
 
 await loginToGoogleCalendar(page);
-
-await Promise.all([page.waitForNavigation(), page.goto(GOOGLE_CALENDAR_URL)]);
 
 const today = new Date().toLocaleDateString();
 
