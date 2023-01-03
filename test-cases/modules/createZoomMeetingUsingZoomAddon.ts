@@ -14,7 +14,7 @@ const createZoomMeetingUsingZoomAddon = async (page: Page): Promise<void> => {
   await page.click(ADDON_BUTTON);
 
   // NOTE: waitForNavigation だと上手く待機できないので直接秒数指定で待機させている
-  await waitFor(1000);
+  await waitFor(3000);
 
   await clickGoogleCalendarAddonSaveButton(page);
 };
