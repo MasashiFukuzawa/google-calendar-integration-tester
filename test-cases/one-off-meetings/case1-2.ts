@@ -1,5 +1,6 @@
 import { Page } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
 import env from "../../utils/env.ts";
+import waitFor from "../../utils/waitFor.ts";
 import createZoomMeetingUsingChromeExtension from "../modules/createZoomMeetingUsingChromeExtension.ts";
 import { CaseResult } from "../schemata.ts";
 import creationWorkflow from "./creation-workflow.ts";
@@ -18,6 +19,8 @@ const testCreateZoomMeetingUsingChromeExtension = async (
     meetingTitle,
     createZoomMeetingUsingChromeExtension
   );
+
+  await waitFor(1000);
 
   return {
     count: 1,
