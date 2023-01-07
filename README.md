@@ -8,22 +8,23 @@ Please refer to the following to install deno.
 
 see. https://yoshixmk.github.io/deno-manual-ja/getting_started/installation.html
 
+#### For MacOS
+
 ```sh
-brew install deno
+$ brew install deno
+
+$ deno --version
+deno 1.29.2 (release, x86_64-apple-darwin)
+v8 10.9.194.5
+typescript 4.9.4
 ```
 
 ### Initial setup
 
 ```sh
-git clone git@github.com:MasashiFukuzawa/google-calendar-integration-tester.git
-deno info
-cp .env.example .env # And please modify .env file
-
-# Install and cache puppeteer
-PUPPETEER_PRODUCT=chrome deno run -A --unstable https://deno.land/x/puppeteer@16.2.0/install.ts
-
-# Cache dotenv
-deno info https://deno.land/x/dotenv@v3.2.0/mod.ts
+$ git clone git@github.com:MasashiFukuzawa/google-calendar-integration-tester.git
+$ deno vendor mod.ts
+$ cp .env.example .env # And please modify .env file
 ```
 
 Enjoy!
@@ -33,5 +34,18 @@ Enjoy!
 NOTE: Manual operation is required for Google's two-factor authentication.
 
 ```sh
-deno run -A --unstable main.ts
+$ deno task start
+```
+
+### Upgrade Deno
+
+```
+$ deno upgrade
+```
+
+### Upgrade Dependencies
+
+```
+$ rm -rf ./vendor
+$ deno vendor mod.ts
 ```
