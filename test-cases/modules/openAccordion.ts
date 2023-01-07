@@ -1,11 +1,11 @@
 import { Page } from "../../mod.ts";
 import waitFor from "../../utils/waitFor.ts";
 
-const MEETING_SELECTION_ACCORDION = "div.U26fgb.p0oLxb.QkA63b.dpr9Zd.lrZTuc";
+const ACCORDION_BUTTON = "div.U26fgb.p0oLxb.QkA63b.dpr9Zd.lrZTuc";
 
 const openAccordion = async (page: Page): Promise<void> => {
-  await page.waitForSelector(MEETING_SELECTION_ACCORDION);
-  await page.click(MEETING_SELECTION_ACCORDION);
+  await page.waitForSelector(ACCORDION_BUTTON);
+  await page.click(ACCORDION_BUTTON);
 
   // NOTE: アコーディオンが開くのにやや時間が掛かるため待機時間が必要
   await waitFor(1000);

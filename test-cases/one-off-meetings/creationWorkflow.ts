@@ -7,7 +7,7 @@ const MEETING_TITLE_INPUT =
 const creationOneOffMeetingWorkflow = async (
   page: Page,
   meetingTitle: string,
-  createMeetingFunc: (page: Page) => Promise<void>
+  createMeetingFunc: (page: Page) => Promise<void>,
 ): Promise<void> => {
   await page.waitForSelector(SCHEDULE_BUTTON);
   await Promise.all([page.waitForNavigation(), page.click(SCHEDULE_BUTTON)]);

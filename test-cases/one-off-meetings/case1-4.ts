@@ -8,7 +8,7 @@ import creationOneOffMeetingWorkflow from "./creationWorkflow.ts";
 const testCreateMicrosoftTeamsMeeting = async (
   page: Page,
   uniqueKey: string,
-  today: string
+  today: string,
 ): Promise<CaseResult> => {
   console.log("test case 1-4");
 
@@ -17,7 +17,7 @@ const testCreateMicrosoftTeamsMeeting = async (
   await creationOneOffMeetingWorkflow(
     page,
     meetingTitle,
-    createMicrosoftTeamsMeeting
+    createMicrosoftTeamsMeeting,
   );
 
   await waitFor(1000);

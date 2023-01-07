@@ -14,7 +14,7 @@ const ZOOM_SCHEDULER_VERSION = env["ZOOM_SCHEDULER_VERSION"] as string;
 const pathToExtension = join(
   GOOGLE_CHROME_EXTENSION_BASE_PATH,
   ZOOM_SCHEDULER_ID,
-  ZOOM_SCHEDULER_VERSION
+  ZOOM_SCHEDULER_VERSION,
 );
 const browser = await puppeteer.launch({
   headless: false,

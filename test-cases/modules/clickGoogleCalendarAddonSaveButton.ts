@@ -3,7 +3,7 @@ import { Page } from "../../mod.ts";
 const SAVE_BUTTON = "div:nth-child(4) > button";
 
 const clickGoogleCalendarAddonSaveButton = async (
-  page: Page
+  page: Page,
 ): Promise<void> => {
   await page.waitForSelector(SAVE_BUTTON);
   await Promise.all([

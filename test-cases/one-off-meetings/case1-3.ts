@@ -8,7 +8,7 @@ import creationOneOffMeetingWorkflow from "./creationWorkflow.ts";
 const testCreateGoogleMeetMeeting = async (
   page: Page,
   uniqueKey: string,
-  today: string
+  today: string,
 ): Promise<CaseResult> => {
   console.log("test case 1-3");
 
@@ -17,7 +17,7 @@ const testCreateGoogleMeetMeeting = async (
   await creationOneOffMeetingWorkflow(
     page,
     meetingTitle,
-    createGoogleMeetMeeting
+    createGoogleMeetMeeting,
   );
 
   await waitFor(1000);

@@ -8,14 +8,14 @@ import testCreateMicrosoftTeamsMeeting from "./case1-4.ts";
 const execOneOffMeetingTestCases = async (
   page: Page,
   uniqueKey: string,
-  today: string
+  today: string,
 ): Promise<void> => {
   console.log("Execute one-off meeting cases...");
 
   const case1_1 = await testCreateZoomMeetingUsingZoomAddon(
     page,
     uniqueKey,
-    today
+    today,
   );
   // TODO: ZoomのOAuth認証
   // const case1_2 = await testCreateZoomMeetingUsingChromeExtension(

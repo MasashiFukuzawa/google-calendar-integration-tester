@@ -8,7 +8,7 @@ import creationOneOffMeetingWorkflow from "./creationWorkflow.ts";
 const testCreateZoomMeetingUsingChromeExtension = async (
   page: Page,
   uniqueKey: string,
-  today: string
+  today: string,
 ): Promise<CaseResult> => {
   console.log("test case 1-2");
 
@@ -17,7 +17,7 @@ const testCreateZoomMeetingUsingChromeExtension = async (
   await creationOneOffMeetingWorkflow(
     page,
     meetingTitle,
-    createZoomMeetingUsingChromeExtension
+    createZoomMeetingUsingChromeExtension,
   );
 
   await waitFor(1000);

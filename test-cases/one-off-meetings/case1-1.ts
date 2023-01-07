@@ -8,7 +8,7 @@ import creationOneOffMeetingWorkflow from "./creationWorkflow.ts";
 const testCreateZoomMeetingUsingZoomAddon = async (
   page: Page,
   uniqueKey: string,
-  today: string
+  today: string,
 ): Promise<CaseResult> => {
   console.log("test case 1-1");
 
@@ -17,7 +17,7 @@ const testCreateZoomMeetingUsingZoomAddon = async (
   await creationOneOffMeetingWorkflow(
     page,
     meetingTitle,
-    createZoomMeetingUsingZoomAddon
+    createZoomMeetingUsingZoomAddon,
   );
 
   await waitFor(1000);
