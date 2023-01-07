@@ -1,4 +1,4 @@
-import { Page } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
+import { Page } from "../mod.ts";
 import env from "./env.ts";
 
 const GOOGLE_EMAIL_INPUT = 'input[type="email"]';

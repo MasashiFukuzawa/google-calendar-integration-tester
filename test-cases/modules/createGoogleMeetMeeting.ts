@@ -1,4 +1,4 @@
-import { Page } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
+import { Page } from "../../mod.ts";
 import waitFor from "../../utils/waitFor.ts";
 import clickGoogleCalendarAddonSaveButton from "../modules/clickGoogleCalendarAddonSaveButton.ts";
 

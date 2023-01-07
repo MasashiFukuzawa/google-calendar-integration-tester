@@ -1,4 +1,4 @@
-import { Page } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
+import { Page } from "../../mod.ts";
 
 import testCreateZoomMeetingUsingZoomAddon from "./case1-1.ts";
 // import testCreateZoomMeetingUsingChromeExtension from "./case1-2.ts";
@@ -8,14 +8,14 @@ import testCreateMicrosoftTeamsMeeting from "./case1-4.ts";
 const execOneOffMeetingTestCases = async (
   page: Page,
   uniqueKey: string,
-  today: string,
+  today: string
 ): Promise<void> => {
   console.log("Execute one-off meeting cases...");
 
   const case1_1 = await testCreateZoomMeetingUsingZoomAddon(
     page,
     uniqueKey,
-    today,
+    today
   );
   // TODO: ZoomのOAuth認証
   // const case1_2 = await testCreateZoomMeetingUsingChromeExtension(

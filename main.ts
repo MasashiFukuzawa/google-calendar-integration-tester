@@ -1,5 +1,4 @@
-import { join } from "https://deno.land/std@0.130.0/path/mod.ts";
-import puppeteer from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
+import { join, puppeteer } from "./mod.ts";
 import execOneOffMeetingTestCases from "./test-cases/one-off-meetings/index.ts";
 import env from "./utils/env.ts";
 import generateUniqueKey from "./utils/generateUniqueKey.ts";
@@ -15,7 +14,7 @@ const ZOOM_SCHEDULER_VERSION = env["ZOOM_SCHEDULER_VERSION"] as string;
 const pathToExtension = join(
   GOOGLE_CHROME_EXTENSION_BASE_PATH,
   ZOOM_SCHEDULER_ID,
-  ZOOM_SCHEDULER_VERSION,
+  ZOOM_SCHEDULER_VERSION
 );
 const browser = await puppeteer.launch({
   headless: false,
