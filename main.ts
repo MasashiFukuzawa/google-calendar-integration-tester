@@ -1,5 +1,5 @@
+import createMeetings from "./google-calendar/createMeetings.ts";
 import { join, puppeteer } from "./mod.ts";
-import createOneOffMeetings from "./test-cases/one-off-meetings/createOneOffMeetings.ts";
 import env from "./utils/env.ts";
 import generateUniqueKey from "./utils/generateUniqueKey.ts";
 import loginGoogleCalendar from "./utils/loginGoogleCalendar.ts";
@@ -42,8 +42,7 @@ await loginGoogleCalendar(page);
 // Create meetings
 const today = new Date().toLocaleDateString();
 const uniqueKey = generateUniqueKey();
-console.log(`Unique key is ${uniqueKey}.`);
-await createOneOffMeetings(page, uniqueKey, today);
-// await createRecurringMeetingTestCases(page, uniqueKey, today);
+console.log(`Unique key is ${uniqueKey}`);
+await createMeetings(page, uniqueKey, today);
 
 await browser.close();

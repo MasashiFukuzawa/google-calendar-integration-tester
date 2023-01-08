@@ -31,7 +31,10 @@ Enjoy!
 
 ### Use deno script
 
-NOTE: Manual operation is required for Google's two-factor authentication.
+- NOTE:
+  - Manual operation is required for Zoom and Google authentication.
+  - For test cases, please modify `setting.ts` according to your own
+    requirements.
 
 ```sh
 $ deno task start

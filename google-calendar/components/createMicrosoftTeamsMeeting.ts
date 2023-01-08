@@ -1,7 +1,7 @@
 import { Page } from "../../mod.ts";
 import waitFor from "../../utils/waitFor.ts";
-import clickGoogleCalendarAddonSaveButton from "../modules/clickGoogleCalendarAddonSaveButton.ts";
-import openAccordion from "../modules/openAccordion.ts";
+import clickGoogleCalendarAddonSaveButton from "../components/clickGoogleCalendarAddonSaveButton.ts";
+import openAccordion from "../components/openAccordion.ts";
 
 const MICROSOFT_BUTTON =
   "div.JPdR6b.e5Emjc.mQc0pc.qjTEB > div > div > span:nth-child(4)";

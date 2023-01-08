@@ -1,18 +1,17 @@
-import { Page } from "../../mod.ts";
-import env from "../../utils/env.ts";
-import waitFor from "../../utils/waitFor.ts";
-import testCases from "./testCases.ts";
+import { Page } from "../mod.ts";
+import { testCases } from "../settings.ts";
+import waitFor from "../utils/waitFor.ts";
 
 const SCHEDULE_BUTTON = "div.sx5BGe > div > div:nth-child(20)";
 const MEETING_TITLE_INPUT =
   "div.rFrNMe.shdZ7e.Uj1FAb.zKHdkd > div > div > div > input";
 
-const createOneOffMeetings = async (
+const createMeetings = async (
   page: Page,
   uniqueKey: string,
   today: string,
 ): Promise<void> => {
-  console.log("Create one-off meetings...");
+  console.log("Create meetings...");
 
   // NOTE: Parallel processing using `Promise.all` is not available
   // because meetings must be created sequentially.
@@ -30,19 +29,9 @@ const createOneOffMeetings = async (
     await testCase["createMeetingFunc"](page);
 
     await waitFor(1000);
-
-    const expectedResult = {
-      count: 1,
-      meetingTitle,
-      startAt: `${today} 19:30`,
-      endAt: `${today} 20:00`,
-      participants: [env["GOOGLE_EMAIL"]],
-    };
-
-    console.log(expectedResult);
   }
 
-  console.log("Finish creating one-off meetings!");
+  console.log("Finish creating meetings!");
 };
 
-export default createOneOffMeetings;
+export default createMeetings;
