@@ -1,15 +1,14 @@
-import { Page } from "../../mod.ts";
 import env from "../../utils/env.ts";
 import waitFor from "../../utils/waitFor.ts";
 import createMicrosoftTeamsMeeting from "../modules/createMicrosoftTeamsMeeting.ts";
-import { CaseResult } from "../schemata.ts";
+import { CaseResult, Props } from "../schemata.ts";
 import creationOneOffMeetingWorkflow from "./creationWorkflow.ts";
 
 const testCreateMicrosoftTeamsMeeting = async (
-  page: Page,
-  uniqueKey: string,
-  today: string,
+  props: Props,
 ): Promise<CaseResult> => {
+  const { page, uniqueKey, today } = props;
+
   console.log("test case 1-4");
 
   const meetingTitle = `${uniqueKey}_test-case-1-4`;
