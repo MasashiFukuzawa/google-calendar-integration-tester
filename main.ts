@@ -1,21 +1,19 @@
 import { join, puppeteer } from "./mod.ts";
-import execOneOffMeetingTestCases from "./test-cases/one-off-meetings/index.ts";
+import createOneOffMeetings from "./test-cases/one-off-meetings/createOneOffMeetings.ts";
 import env from "./utils/env.ts";
 import generateUniqueKey from "./utils/generateUniqueKey.ts";
 import loginGoogleCalendar from "./utils/loginGoogleCalendar.ts";
 import loginZoom from "./utils/loginZoom.ts";
 
+const CHROME_EXTENSION_BASE_PATH = env["CHROME_EXTENSION_BASE_PATH"] as string;
 const GOOGLE_CALENDAR_URL = "https://calendar.google.com/calendar/u/0/r/day";
-const GOOGLE_CHROME_EXTENSION_BASE_PATH = env[
-  "GOOGLE_CHROME_EXTENSION_BASE_PATH"
-] as string;
 const ZOOM_LOGIN_URL = "https://zoom.us/signin?from=extension#/login";
-const ZOOM_SCHEDULER_ID = "kgjfgplpablkjnlkjmjdecgdpfankdle";
+const ZOOM_SCHEDULER_CHROME_EXTENSION_ID = "kgjfgplpablkjnlkjmjdecgdpfankdle";
 const ZOOM_SCHEDULER_VERSION = env["ZOOM_SCHEDULER_VERSION"] as string;
 
 const pathToExtension = join(
-  GOOGLE_CHROME_EXTENSION_BASE_PATH,
-  ZOOM_SCHEDULER_ID,
+  CHROME_EXTENSION_BASE_PATH,
+  ZOOM_SCHEDULER_CHROME_EXTENSION_ID,
   ZOOM_SCHEDULER_VERSION,
 );
 
@@ -45,7 +43,7 @@ await loginGoogleCalendar(page);
 const today = new Date().toLocaleDateString();
 const uniqueKey = generateUniqueKey();
 console.log(`Unique key is ${uniqueKey}.`);
-await execOneOffMeetingTestCases({ page, uniqueKey, today });
-// await execRecurringMeetingTestCases(page, uniqueKey);
+await createOneOffMeetings(page, uniqueKey, today);
+// await createRecurringMeetingTestCases(page, uniqueKey, today);
 
 await browser.close();

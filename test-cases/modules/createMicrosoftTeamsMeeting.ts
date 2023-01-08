@@ -1,6 +1,5 @@
 import { Page } from "../../mod.ts";
 import waitFor from "../../utils/waitFor.ts";
-
 import clickGoogleCalendarAddonSaveButton from "../modules/clickGoogleCalendarAddonSaveButton.ts";
 import openAccordion from "../modules/openAccordion.ts";
 
@@ -13,8 +12,10 @@ const createMicrosoftTeamsMeeting = async (page: Page): Promise<void> => {
   await page.waitForSelector(MICROSOFT_BUTTON);
   await page.click(MICROSOFT_BUTTON);
 
-  // NOTE: waitForNavigation だと上手く待機できないので直接秒数指定で待機させている
-  await waitFor(10000);
+  // NOTE: `waitForNavigation` doesn't work well,
+  // so it waits for an arbitrary number of seconds.
+  // Teams meeting takes time to create, so set it longer than others.
+  await waitFor(1000 * 15);
 
   await clickGoogleCalendarAddonSaveButton(page);
 };

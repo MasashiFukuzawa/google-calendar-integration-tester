@@ -1,6 +1,5 @@
 import { Page } from "../../mod.ts";
 import waitFor from "../../utils/waitFor.ts";
-
 import clickGoogleCalendarAddonSaveButton from "../modules/clickGoogleCalendarAddonSaveButton.ts";
 import openAccordion from "../modules/openAccordion.ts";
 
@@ -13,8 +12,9 @@ const createZoomMeetingUsingZoomAddon = async (page: Page): Promise<void> => {
   await page.waitForSelector(ZOOM_BUTTON);
   await page.click(ZOOM_BUTTON);
 
-  // NOTE: waitForNavigation だと上手く待機できないので直接秒数指定で待機させている
-  await waitFor(3000);
+  // NOTE: `waitForNavigation` doesn't work well,
+  // so it waits for an arbitrary number of seconds.
+  await waitFor(1000 * 3);
 
   await clickGoogleCalendarAddonSaveButton(page);
 };
