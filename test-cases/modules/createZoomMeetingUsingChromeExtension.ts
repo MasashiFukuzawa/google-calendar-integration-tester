@@ -6,9 +6,8 @@ const createZoomMeetingUsingChromeExtension = async (
   page: Page,
 ): Promise<void> => {
   await page.waitForSelector(SAVE_BUTTON);
+  await page.click(SAVE_BUTTON);
   await Promise.all([page.waitForNavigation(), page.click(SAVE_BUTTON)]);
-
-  // TODO: ZoomのOAuth認証
 };
 
 export default createZoomMeetingUsingChromeExtension;
