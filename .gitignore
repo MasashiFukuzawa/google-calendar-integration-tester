@@ -1,5 +1,5 @@
-create/vendor
-create/.env
+deno/vendor
+deno/.env
 
-update/.clasp.json
-update/node_modules
+google-apps-scripts/.clasp.json
+google-apps-scripts/node_modules
