@@ -1,4 +1,4 @@
-puppeteer/vendor
+puppeteer/vendor/*/
 puppeteer/.env
 
 google-apps-scripts/.clasp.json
