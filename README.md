@@ -23,7 +23,7 @@ typescript 4.9.4
 
 ```sh
 $ git clone git@github.com:MasashiFukuzawa/google-calendar-integration-tester.git
-$ cd create
+$ cd deno
 $ deno vendor mod.ts
 $ cp .env.example .env # And please modify .env file
 ```
@@ -65,7 +65,7 @@ see. https://github.com/google/clasp#install
 # if needed
 $ git clone git@github.com:MasashiFukuzawa/google-calendar-integration-tester.git
 
-$ cd update
+$ cd google-apps-scripts
 $ yarn
 
 $ clasp login
