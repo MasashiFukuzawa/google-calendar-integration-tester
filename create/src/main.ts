@@ -1,4 +1,4 @@
-import createMeetings from "./google-calendar/createMeetings.ts";
+import createMeetings from "./createMeetings.ts";
 import { join, puppeteer } from "./mod.ts";
 import env from "./utils/env.ts";
 import generateUniqueKey from "./utils/generateUniqueKey.ts";

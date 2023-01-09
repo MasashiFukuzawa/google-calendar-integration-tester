@@ -1,4 +1,4 @@
-import { Page } from "../../mod.ts";
+import { Page } from "../mod.ts";
 
 const SAVE_BUTTON = "div:nth-child(4) > button";
 
