@@ -1,0 +1,22 @@
+{
+  "name": "google-calendar-integration-tester",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MasashiFukuzawa/google-calendar-integration-tester.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MasashiFukuzawa/google-calendar-integration-tester/issues"
+  },
+  "homepage": "https://github.com/MasashiFukuzawa/google-calendar-integration-tester#readme",
+  "devDependencies": {
+    "@google/clasp": "^2.4.2"
+  }
+}
