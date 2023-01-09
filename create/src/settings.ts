@@ -1,7 +1,7 @@
-import createGoogleMeetMeeting from "./google-calendar/components/createGoogleMeetMeeting.ts";
-import createMicrosoftTeamsMeeting from "./google-calendar/components/createMicrosoftTeamsMeeting.ts";
-import createZoomMeetingUsingChromeExtension from "./google-calendar/components/createZoomMeetingUsingChromeExtension.ts";
-import createZoomMeetingUsingZoomAddon from "./google-calendar/components/createZoomMeetingUsingZoomAddon.ts";
+import createGoogleMeetMeeting from "./components/createGoogleMeetMeeting.ts";
+import createMicrosoftTeamsMeeting from "./components/createMicrosoftTeamsMeeting.ts";
+import createZoomMeetingUsingChromeExtension from "./components/createZoomMeetingUsingChromeExtension.ts";
+import createZoomMeetingUsingZoomAddon from "./components/createZoomMeetingUsingZoomAddon.ts";
 
 // These are samples.
 // Please modify the following according to your requirements.

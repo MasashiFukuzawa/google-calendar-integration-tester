@@ -1,2 +1,5 @@
-vendor
-.env
+create/vendor
+create/.env
+
+update/.clasp.json
+update/node_modules

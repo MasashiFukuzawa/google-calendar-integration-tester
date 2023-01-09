@@ -1,6 +1,6 @@
-import { Page } from "../mod.ts";
-import { testCases } from "../settings.ts";
-import waitFor from "../utils/waitFor.ts";
+import { Page } from "./mod.ts";
+import { testCases } from "./settings.ts";
+import waitFor from "./utils/waitFor.ts";
 
 const SCHEDULE_BUTTON = "div.sx5BGe > div > div:nth-child(20)";
 const MEETING_TITLE_INPUT =
@@ -9,7 +9,7 @@ const MEETING_TITLE_INPUT =
 const createMeetings = async (
   page: Page,
   uniqueKey: string,
-  today: string,
+  today: string
 ): Promise<void> => {
   console.log("Create meetings...");
 

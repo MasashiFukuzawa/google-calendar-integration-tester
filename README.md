@@ -1,6 +1,6 @@
 # google-calendar-integration-tester
 
-## Setup
+## Setup for Deno (creation script)
 
 ### Prerequisite
 
@@ -23,11 +23,10 @@ typescript 4.9.4
 
 ```sh
 $ git clone git@github.com:MasashiFukuzawa/google-calendar-integration-tester.git
+$ cd create
 $ deno vendor mod.ts
 $ cp .env.example .env # And please modify .env file
 ```
-
-Enjoy!
 
 ### Use deno script
 
@@ -51,4 +50,30 @@ $ deno upgrade
 ```
 $ rm -rf ./vendor
 $ deno vendor mod.ts
+```
+
+## Setup for Google Apps Scripts (update script)
+
+### Prerequisite
+
+Please install `clasp` and enable the Google Apps Script API.
+see. https://github.com/google/clasp#install
+
+### Initial setup
+
+```sh
+# if needed
+$ git clone git@github.com:MasashiFukuzawa/google-calendar-integration-tester.git
+
+$ cd update
+$ yarn
+
+$ clasp login
+$ clasp create --title "operate-calendar-events" --type sheets --rootDir ./src
+
+# Here, maybe you need to move the .clasp.json.
+
+$ clasp push --force
+
+# You also need to set Google Apps Script properties (`SPREAD_SHEET_ID` and `PARTICIPANT_EMAIL`).
 ```
