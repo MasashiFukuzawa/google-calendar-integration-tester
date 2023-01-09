@@ -9,7 +9,7 @@ const MEETING_TITLE_INPUT =
 const createMeetings = async (
   page: Page,
   uniqueKey: string,
-  today: string
+  today: string,
 ): Promise<void> => {
   console.log("Create meetings...");
 

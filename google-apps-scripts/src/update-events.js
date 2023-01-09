@@ -46,9 +46,9 @@ const updateEvents = (caseIds, updateFunc) => {
   sortedTestEvents.forEach((e) => {
     const title = e.getTitle();
     // NOTE: 変更前のイベントは {unique_key}_test-case-1-xx という
-    // フォーマットで統一しており、unique_key は12文字なので
-    // 先頭をカットして `1-xx` の部分だけを取り出す
-    const targetCaseId = title.substring(23);
+    // フォーマットで統一しており、unique_key は11文字なので
+    // 不要な部分をカットして `1-xx` の部分だけを取り出す
+    const targetCaseId = title.substring(22);
 
     const target = caseIds.find((id) => id === targetCaseId);
     if (!target) return;
