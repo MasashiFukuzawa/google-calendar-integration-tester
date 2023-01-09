@@ -1,5 +1,5 @@
-deno/vendor
-deno/.env
+puppeteer/vendor
+puppeteer/.env
 
 google-apps-scripts/.clasp.json
 google-apps-scripts/node_modules
