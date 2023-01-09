@@ -1,0 +1,16 @@
+{
+  "tasks": {
+    "start": "deno run -A main.ts"
+  },
+  "importMap": "./vendor/import_map.json",
+  "lint": {
+    "files": {
+      "exclude": ["vendor/"]
+    }
+  },
+  "fmt": {
+    "files": {
+      "exclude": ["vendor/"]
+    }
+  }
+}
