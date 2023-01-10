@@ -24,7 +24,7 @@ typescript 4.9.4
 ```sh
 $ git clone git@github.com:MasashiFukuzawa/google-calendar-integration-tester.git
 $ cd puppeteer
-$ deno vendor mod.ts
+$ deno vendor src/mod.ts
 $ cp .env.example .env # And please modify .env file
 ```
 

@@ -1,0 +1,23 @@
+{
+  "imports": {
+    "https://esm.sh/jszip@3.5.0": "./esm.sh/jszip@3.5.0.js",
+    "https://deno.land/": "./deno.land/",
+    "https://esm.sh/": "./esm.sh/"
+  },
+  "scopes": {
+    "./esm.sh/": {
+      "/v99/node_buffer.js": "./esm.sh/v99/node_buffer.js",
+      "/v99/lie@3.3.0/deno/lie.js": "./esm.sh/v99/lie@3.3.0/deno/lie.js",
+      "/v99/pako@1.0.11/deno/pako.js": "./esm.sh/v99/pako@1.0.11/deno/pako.js",
+      "/v99/readable-stream@2.3.7/deno/readable-stream.js": "./esm.sh/v99/readable-stream@2.3.7/deno/readable-stream.js",
+      "/v99/set-immediate-shim@1.0.1/deno/set-immediate-shim.js": "./esm.sh/v99/set-immediate-shim@1.0.1/deno/set-immediate-shim.js",
+      "/v99/immediate@3.0.6/deno/immediate.js": "./esm.sh/v99/immediate@3.0.6/deno/immediate.js",
+      "/v99/core-util-is@1.0.3/deno/core-util-is.js": "./esm.sh/v99/core-util-is@1.0.3/deno/core-util-is.js",
+      "/v99/inherits@2.0.4/deno/inherits.js": "./esm.sh/v99/inherits@2.0.4/deno/inherits.js",
+      "/v99/isarray@1.0.0/deno/isarray.js": "./esm.sh/v99/isarray@1.0.0/deno/isarray.js",
+      "/v99/process-nextick-args@2.0.1/deno/process-nextick-args.js": "./esm.sh/v99/process-nextick-args@2.0.1/deno/process-nextick-args.js",
+      "/v99/safe-buffer@5.1.2/deno/safe-buffer.js": "./esm.sh/v99/safe-buffer@5.1.2/deno/safe-buffer.js",
+      "/v99/util-deprecate@1.0.2/deno/util-deprecate.js": "./esm.sh/v99/util-deprecate@1.0.2/deno/util-deprecate.js"
+    }
+  }
+}

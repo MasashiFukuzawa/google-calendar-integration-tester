@@ -40,9 +40,8 @@ await page.goto(GOOGLE_CALENDAR_URL);
 await loginGoogleCalendar(page);
 
 // Create meetings
-const today = new Date().toLocaleDateString();
 const uniqueKey = generateUniqueKey();
 console.log(`Unique key is ${uniqueKey}`);
-await createMeetings(page, uniqueKey, today);
+await createMeetings(page, uniqueKey);
 
 await browser.close();
