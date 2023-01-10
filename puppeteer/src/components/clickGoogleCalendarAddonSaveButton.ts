@@ -1,6 +1,6 @@
 import { Page } from "../mod.ts";
 
-const SAVE_BUTTON = "div:nth-child(4) > button";
+const SAVE_BUTTON = "div.BTotkb.JaKw1 > div:nth-child(4) > button";
 
 const clickGoogleCalendarAddonSaveButton = async (
   page: Page,
