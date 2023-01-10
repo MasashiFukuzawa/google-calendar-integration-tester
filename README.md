@@ -72,12 +72,14 @@ $ git clone git@github.com:MasashiFukuzawa/google-calendar-integration-tester.gi
 $ cd google-apps-scripts
 $ yarn
 
+# when create new gas project
 $ clasp login
 $ clasp create --title "operate-calendar-events" --type sheets --rootDir ./src
-
-# Here, maybe you need to move the .clasp.json.
-
 $ clasp push --force
-
 # You also need to set Google Apps Script properties (`SPREAD_SHEET_ID` and `PARTICIPANT_EMAIL`).
+
+# when clone existing gas project
+$ clasp login
+$ cd src
+$ clasp clone $scriptId # You can get from existing gas project.
 ```
