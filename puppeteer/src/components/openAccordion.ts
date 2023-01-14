@@ -1,4 +1,4 @@
-import { Page } from "../mod.ts";
+import { Page } from "../deps.ts";
 import waitFor from "../utils/waitFor.ts";
 
 const ACCORDION_BUTTON = "div.U26fgb.p0oLxb.QkA63b.dpr9Zd.lrZTuc";

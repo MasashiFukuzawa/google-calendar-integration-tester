@@ -1,5 +1,5 @@
 import clickGoogleCalendarAddonSaveButton from "../components/clickGoogleCalendarAddonSaveButton.ts";
-import { Page } from "../mod.ts";
+import { Page } from "../deps.ts";
 import waitFor from "../utils/waitFor.ts";
 
 const GOOGLE_MEET_BUTTON = "#xAddRtcSel";

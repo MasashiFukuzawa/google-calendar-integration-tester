@@ -1,4 +1,4 @@
-import { Page } from "./mod.ts";
+import { Page } from "./deps.ts";
 
 export type TestCases = {
   name: string;
