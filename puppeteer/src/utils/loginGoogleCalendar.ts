@@ -1,4 +1,4 @@
-import { Page } from "../mod.ts";
+import { Page } from "../deps.ts";
 import env from "./env.ts";
 
 const GOOGLE_EMAIL_INPUT = 'input[type="email"]';

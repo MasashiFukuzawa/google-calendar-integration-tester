@@ -1,4 +1,4 @@
-import { assertEquals } from "../../mod.ts";
+import { assertEquals } from "../../deps.ts";
 import generateUniqueKey from "../../utils/generateUniqueKey.ts";
 
 Deno.test("when normal", () => {

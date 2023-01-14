@@ -1,4 +1,4 @@
-import { Page } from "../mod.ts";
+import { Page } from "../deps.ts";
 
 const SAVE_BUTTON = "div.BTotkb.JaKw1 > div:nth-child(4) > button";
 

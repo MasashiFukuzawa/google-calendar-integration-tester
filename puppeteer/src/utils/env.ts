@@ -1,4 +1,4 @@
-import { config, DotenvConfig } from "../mod.ts";
+import { config, DotenvConfig } from "../deps.ts";
 
 class EnvSingleton {
   private static singleton = new EnvSingleton();

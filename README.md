@@ -33,7 +33,7 @@ $ cd puppeteer
 # see: https://deno.land/x/puppeteer@16.2.0
 $ PUPPETEER_PRODUCT=chrome deno run -A --unstable https://deno.land/x/puppeteer@16.2.0/install.ts
 
-$ deno vendor src/mod.ts
+$ deno vendor src/deps.ts
 $ cp .env.example .env # And please modify .env file
 ```
 
@@ -58,7 +58,7 @@ $ deno upgrade
 
 ```
 $ rm -rf ./vendor
-$ deno vendor mod.ts
+$ deno vendor deps.ts
 ```
 
 ## Setup for Google Apps Scripts (update script)
