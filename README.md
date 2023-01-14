@@ -1,5 +1,10 @@
 # google-calendar-integration-tester
 
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE.md)
+
+This repository provides scripts to automatically create Zoom, Google Meet, and Microsoft Teams meetings using Google Calendar.
+You can use it to test those webhook events, etc.
+
 ## Setup for Deno (creation script)
 
 ### Prerequisite
