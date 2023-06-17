@@ -1,5 +1,7 @@
 puppeteer/vendor/*/
 puppeteer/.env
+puppeteer/zoomCookies.txt
+puppeteer/googleCookies.txt
 
 google-apps-scripts/.clasp.json
 google-apps-scripts/node_modules
