@@ -17,7 +17,7 @@ see. https://yoshixmk.github.io/deno-manual-ja/getting_started/installation.html
 
 ```sh
 $ brew install deno
-
+$ deno upgrade --version 1.29.2
 $ deno --version
 deno 1.29.2 (release, x86_64-apple-darwin)
 v8 10.9.194.5
@@ -45,6 +45,7 @@ $ cp .env.example .env # And please modify .env file
     requirements.
 
 ```sh
+$ cd puppeteer
 $ deno task start
 ```
 
@@ -57,8 +58,9 @@ $ deno upgrade
 ### Upgrade Dependencies
 
 ```
+$ cd puppeteer
 $ rm -rf ./vendor
-$ deno vendor deps.ts
+$ deno vendor src/deps.ts
 ```
 
 ## Setup for Google Apps Scripts (update script)
