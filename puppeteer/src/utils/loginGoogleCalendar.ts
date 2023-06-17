@@ -5,7 +5,6 @@ const GOOGLE_EMAIL_INPUT = 'input[type="email"]';
 const GOOGLE_EMAIL_NEXT_BUTTON = "#identifierNext";
 const GOOGLE_PASSWORD_INPUT = 'input[type="password"]';
 const GOOGLE_PASSWORD_NEXT_BUTTON = "#passwordNext";
-const GOOGLE_SMART_PHONE_IMAGE = "#view_container";
 
 const loginGoogleCalendar = async (page: Page): Promise<void> => {
   console.log("Start to login Google Calendar.");
@@ -29,7 +28,6 @@ const loginGoogleCalendar = async (page: Page): Promise<void> => {
   ]);
 
   console.log("Please complete two-factor authentication manually.");
-  await page.waitForSelector(GOOGLE_SMART_PHONE_IMAGE);
 
   await page.waitForNavigation({ timeout: 1000 * 60 * 3 }); // within 3min
 
